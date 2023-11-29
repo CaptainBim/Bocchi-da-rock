@@ -1,0 +1,51 @@
+body {
+    font-family: 'Nova Square';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('gambar/Bocchi-the-Rock.jpg');
+    background-size: cover;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+form h2{
+    margin-top: auto;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label[for="username"] {
+    color: blue; 
+}
+label[for="password"] {
+    color: rgb(131, 131, 22); 
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: rgb(201, 150, 190);
+    color: rgb(30, 73, 75);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
