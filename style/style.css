@@ -18,7 +18,10 @@
         right: 0;
         z-index: 9999;
     }
-    
+    .overlay{
+        height:50px;
+
+    }
     .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -52,7 +55,7 @@
         color: wheat;
     }
     .hero-center{
-        color: antiquewhite;
+        color: rgb(185, 70, 89);
         padding: 15% 0;
         text-align: center;
         width: 70%;
@@ -96,9 +99,10 @@
     }
     .about h2{
         font-size: 3em;
+        color: rgb(185, 70, 89);
     }
     .about h4{
-        color: #393E46;
+        color:gainsboro;
         font-size: 2em;
     }
     .about .about-decs p{
@@ -124,12 +128,17 @@
         object-fit: contain; 
     }
     /* member */
-    .member h2{
-        font-size: 3em;
-        color: #393E46;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+   
+    .mmember h2{
+        color:white;
+        font-size: 80px;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .member{
+        padding: 10px ;
+        text-align: center;
     }
     /* merch */
     .merchandise {
@@ -137,7 +146,11 @@
         padding: 50px 0;
         text-align: center;
       }
-      
+    .merchandise h2{
+        color:white;
+        font-size: 120px;
+        padding-top: 90px;
+    }
     .merchandise .mcontainer {
         max-width: 1200px;
         margin: 0 auto;
@@ -165,60 +178,102 @@
         object-fit: cover;
         border-radius: 5px;
       }
-      /*contact*/
-
-      .contact{
-        position: relative;
-        min-height: 100vh;
-        padding: 50px 100px;
+      /*prestasi*/
+      .tasi {
+        background-color: black;
+        padding: 50px 0;
+        text-align: center;
+      }
+    .tasi h2{
+        color:white;
+        font-size: 100px;
+        padding-top: 90px;
+    }
+    .tasi .tcontainer {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        color: wheat;
+        flex-wrap: wrap;
+      }
+      
+      .prestasi {
+        width: 300px;
+        height: 250px;
         text-align: center;
+        margin: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .prestasi img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      /*contact*/
+      .contact {
+        padding-top: 90px;
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: wheat;
         background-image: url('gambar/Bocchi-the-Rock.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-      }
-
-      /* tambah */
-      .contact::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        background-color : rgba(0, 0, 0, 0.50);
-      }
-
-
-      .contact .content {
-        z-index: 1; /* tambah */
     }
     
-    .contact .container {
-        z-index: 1; /* tambah */
+    .contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.50);
     }
-
-    .contact .content h2{
-        font-size: 2em;
-        color: white;
+    
+    .contact .content {
+        z-index: 1;
         flex-grow: 1;
-        text-align: center;
-        line-height: 180%;
-        
+        padding-left: 90px;
     }
-    .contact .content p{
-        color: white;
+    .contact .content h2 {
+        font-size: 60px;
+    }
+    .contact .contact-left {
+        flex-basis: 40%;
+        padding-left: 10%;
+    }
+    
+    .contact .container .contact-left {
+        text-align: left;
+        margin-left: auto;
+        z-index: 1;
         flex-grow: 1;
-        text-align: center;
-        line-height: 180%;
+    }
+    
+    .contact .contact-right {
+        flex-basis: 40%;
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .contact .contactform form {
 
-      }
-
-
+    }
+    
+    
       /*footer*/
 
       footer {

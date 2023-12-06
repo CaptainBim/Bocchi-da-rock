@@ -1,3 +1,31 @@
+<?php
+session_start();
+require_once('database/database.php');
+require_once('database/auth.php');
+
+if (checkLogin()) {
+    header('location:index.php');
+    exit;
+}
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];;
+
+    $query = "SELECT * FROM login WHERE username = '{$username}' AND password = '{$password}'";
+    $result = mysqli_query($connectDb, $query);
+    $data = mysqli_fetch_array($result);
+
+    if ($data) {
+        $_SESSION['username'] = true;
+        $_SESSION['password'] = $data;
+        header('location:index.php?status=sukses');
+        exit;
+    } else {
+        header('location:login.php?status=gagal');
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

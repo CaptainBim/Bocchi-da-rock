@@ -1,0 +1,88 @@
+*{
+    font-family: 'Nova Square';
+        padding: 0;
+        margin: 0;
+        
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+    }
+    
+    .hero {
+        background-color: transparent;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+    .overlay{
+            height:0px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo img {
+        width: 75px;
+        height: auto;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin-left: 20px;
+    }
+    
+    .nav-links li a {
+        text-decoration: none;
+        color: beige;
+        font-weight: bold;
+    }
+    
+    .nav-links li a:hover {
+        color: wheat;
+    }
+    .hero-center{
+        color: #F4ECE1;
+        padding: 25% 0;
+        text-align: center;
+        margin: auto;
+        background-image: url('gambar/1293442.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background: rgb(11,11,11,0,505);
+    }
+
+    .hero-center h2{
+        position: relative;
+        font-size: 3em;
+        text-align: left;
+        background-size: 100%;
+         margin-top: -170px;
+         margin-left: 20px;
+    }
+
+    .hero-center .btn{
+        background:transparent;
+        color: rgb(238, 164, 207);
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
