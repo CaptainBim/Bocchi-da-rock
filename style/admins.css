@@ -58,7 +58,7 @@
         padding: 25% 0;
         text-align: center;
         margin: auto;
-        background-image: url('gambar/1293442.jpg');
+        background-image: url('../gambar/1293442.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -79,10 +79,4 @@
         color: rgb(238, 164, 207);
         display: inline-block;
         margin-top: 20px;
-    }
-
-    .wrapper{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }

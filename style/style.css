@@ -18,11 +18,14 @@
         right: 0;
         z-index: 9999;
     }
-    .overlay{
-        height:50px;
-
+    .Ccontainer{
+        display:flex;
+        width: 100%;
+        justify-items: flex-start;
     }
+    
     .container {
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
@@ -52,7 +55,7 @@
     }
     
     .nav-links li a:hover {
-        color: wheat;
+        color: rgb(185, 70, 89);;
     }
     .hero-center{
         color: rgb(185, 70, 89);
@@ -60,7 +63,7 @@
         text-align: center;
         width: 70%;
         margin: auto;
-        background-image: url('gambar/banner.png');
+        background-image: url('../gambar/banner.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -179,57 +182,70 @@
         border-radius: 5px;
       }
       /*prestasi*/
-      .tasi {
-        background-color: black;
-        padding: 50px 0;
-        text-align: center;
+      #penghargaan {
+          background-color: black;
+          padding: 50px 0;
+          text-align: center;
       }
-    .tasi h2{
-        color:white;
-        font-size: 100px;
-        padding-top: 90px;
-    }
-    .tasi .tcontainer {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+  
+      #penghargaan h2 {
+          color: white;
+          font-size: 100px;
+          padding-top: 90px;
       }
-      
-      .prestasi {
-        width: 300px;
-        height: 250px;
-        text-align: center;
-        margin: 20px;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  
+      .tcontainer {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          padding-top: 30px;
       }
-      
-      .prestasi img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
+  
+      .kotak-penghargaan {
+          flex: 0 0 calc(48% - 20px);
+          border: 1px solid #ccc;
+          padding: 20px;
+          margin: 10px;
+          text-align: center;
+          background-color: #fff;
+          transition: box-shadow 0.3s ease-in-out;
       }
+  
+      .kotak-penghargaan:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  
+      .kotak-penghargaan h3 {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+      }
+  
+      .deskripsi {
+          color: #555;
+      }
+  
+      .date {
+          font-style: italic;
+          color: #888;
+      }
+  
       /*contact*/
       .contact {
         padding-top: 90px;
         position: relative;
         min-height: 100vh;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
         color: wheat;
-        background-image: url('gambar/Bocchi-the-Rock.jpg');
+        width: 100%;
+        background-image: url('../gambar/Bocchi-the-Rock.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
+
     
     .contact::before {
         content: "";
@@ -242,37 +258,60 @@
     }
     
     .contact .content {
+        padding-top: 0 !important; 
         z-index: 1;
-        flex-grow: 1;
+        padding-block: 10%;
         padding-left: 90px;
     }
     .contact .content h2 {
         font-size: 60px;
     }
+
     .contact .contact-left {
         flex-basis: 40%;
         padding-left: 10%;
+        color: rgb(185, 70, 89);
+        z-index: 5;
+
+        
     }
     
     .contact .container .contact-left {
-        text-align: left;
         margin-left: auto;
         z-index: 1;
-        flex-grow: 1;
     }
     
     .contact .contact-right {
-        flex-basis: 40%;
         padding-right: 10%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        text-align: right;
+        z-index: 1; 
+   }
+    .contact-right{
+        width: 100%;
+        margin-right: auto;
     }
-    
-    .contact .contactform form {
 
+
+    .contact .row input[type=text],
+    .contact .row input[type=email],
+    .contact .row textarea {
+     font-size: 14px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-radius: 2px;
+    border-color: black;
+    margin-top: 10px;
+    width: 330px;
     }
-    
+    .contact .row button[type=submit] {
+    border: 0;
+    padding: 10px 30px;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
     
       /*footer*/
 
@@ -297,7 +336,7 @@
         padding-bottom: 100%;
         height: 100%;
         width: 100%;
-        background-image: url('gambar/banner2.png');
+        background-image: url('../gambar/banner2.png');
         background-size: cover;
         background-position: center;
 
@@ -322,7 +361,8 @@
     }
 
     .container {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row-reverse;
     }
 
 }

@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once('database/auth.php');
-
-onlyAdmin();
+require_once('database/database.php');
 
 $_SESSION = array();
 

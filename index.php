@@ -2,6 +2,18 @@
 session_start();
 require_once('database/database.php');
 require_once('database/auth.php');
+// $queryPenghargaan = "SELECT * FROM penghargaan ORDER BY id ASC";
+// $resultPenghargaan = mysqli_query($connectDb, $queryPenghargaan);
+
+// if (!$resultPenghargaan) {
+//     die("Query failed: " . mysqli_error($connectDb));
+// }
+
+// while ($row = mysqli_fetch_assoc($resultPenghargaan)) {
+//     print_r($row);
+// }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?> -->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +21,24 @@ require_once('database/auth.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap">
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        console.log($('.table').length);
+        $('.table').DataTable();
+    });
+</script>
+
+
     <title>Kessoku band</title>
 </head>
 <body>
@@ -105,67 +131,54 @@ require_once('database/auth.php');
             </div>
         </div>
     </div>
-    <!-- experience -->
-    <section id="penghargaan" class="tasi">
-        <h2>Penghargaan Kami</h2>
-        <div class="tcontainer">
-            <br><br>
-            <div class="prestasi">
-                <h3>Nendroid Hitori Gotoh</h3>
-                <p class="price">$29.99</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="prestasi">
-                <h3>Nendroid Nijika Ijichi</h3>
-                <p class="price">$29.99</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="prestasi">
-                <h3>Plushie Ryo Yamada</h3>
-                <p class="price">$49.99</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="prestasi">
-                <h3>Nendroid Ikuyo Kita</h3>
-                <p class="price">29.99</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="prestasi">
-                <h3>Baju Kessoku Band</h3>
-                <p class="price">$9.99</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="prestasi">
-                <h3>Nendroid Ryo Yamada</h3>
-                <p class="price">$29.99</p>
+<!-- experience -->
+<section id="penghargaan" class="tasi">
+    <h2>Penghargaan Kami</h2>
+    <div class="tcontainer">
+        <br><br>
+        <?php
+        $queryPenghargaan = "SELECT * FROM experience ORDER BY id ASC";
+        $resultPenghargaan = mysqli_query($connectDb, $queryPenghargaan);
+
+        while ($dataPenghargaan = mysqli_fetch_array($resultPenghargaan)) :
+        ?>
+         <div class="col-md-4">
+            <div class="kotak-penghargaan">
+                <h3><?= $dataPenghargaan['title']; ?></h3>
+                <p class="deskripsi"><?= $dataPenghargaan['description']; ?></p>
+                <p class="date"><?= $dataPenghargaan['date_start']; ?></p>
+                <p class="date"><?= $dataPenghargaan['date_end']; ?></p>
             </div>
         </div>
-        </div>
-    </section>
+        <?php endwhile; ?>
+    </div>
+</section>
+
+
     <!-- kontak -->
     <section id="contact" class="contact">
         <div class="content">
             <h2>Hubungi Kami</h2>
             <p>Kalian bisa hubungi kami jika anda ingin kami tampil di acara anda atau anda juga bisa kirim mail kepada talent kami</p>    
         </div>
-        <div class="container">
+        <div class="Ccontainer">
             <div class="contact-left">
                 <div class="box">
-                    <div class="icon"><i class="fa fa-map-pin" style="color: wheat;"></i></div>
+                    <div class="icon"><i class="fa fa-map-pin" style="color: pink;"></i></div>
                         <div class="text">
                             <h3>Address</h3>
                             <p>Jepang, 〒155-0031 Tokyo, Setagaya City, Kitazawa, 2 Chome-6-10 仙田商会仙田ビル B1</p>
                     </div>
                 </div>
                 <div class="box">
-                    <div class="icon"><i class="fa fa-phone" style="color: wheat;"></i></div>
+                    <div class="icon"><i class="fa fa-phone" style="color: pink;"></i></div>
                         <div class="text">
                             <h3>Phone</h3>
                             <p>+81 3-3466-7430</p>
                     </div>
                 </div>
                 <div class="box">
-                    <div class="icon"><i class="fa fa-globe-asia" style="color: wheat;"></i></div>
+                    <div class="icon"><i class="fa fa-globe-asia" style="color: pink;"></i></div>
                         <div class="text">
                             <h3>Website</h3>
                             <p>http://www.loft-prj.co.jp/SHELTER/</p>
@@ -173,8 +186,31 @@ require_once('database/auth.php');
                 </div>
             </div>
             <div class="contact-right">
-                
+                <div class="concontact">
+                    <form action="pesantambah.php" method="post" class="datatamu">
+                      <div class="row">
+        
+                        <div class="col1">
+                          <input type="text" name="nama" class="form-control" placeholder="Nama Kamu" required>
+                        </div>
+        
+                        <div class="col2">
+                          <input type="email" class="form-control" name="email" placeholder="Email Kamu" required>
+                        </div>
+        
+                        <div class="col4">
+                            <textarea class="pesan" name="pesan" rows="6" placeholder="Pesan Kamu" required></textarea>
+                        </div>
+
+                        <button class="btn btn-danger" type="submit">Kirim Pesan</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
             </div>
+            </section>
+        </div>
         </div>
     </section>
 </body>
